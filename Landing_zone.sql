@@ -50,3 +50,13 @@ create table PLAYERS
     current_club_domestic_competition_id text null,
     current_club_name                    text null
 );
+
+CREATE FILE FORMAT LANDING_CSV
+TYPE = 'CSV'
+FIELD_DELIMITER = ','
+SKIP_HEADER = 1
+FIELD_OPTIONALLY_ENCLOSED_BY = '"'
+TRIM_SPACE = TRUE
+NULL_IF = ('\\N', 'NULL', '')
+EMPTY_FIELD_AS_NULL = TRUE
+ENCODING = 'UTF8';
